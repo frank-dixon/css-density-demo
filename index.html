@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-density="quiet" data-surface="cream">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Density Demo — Quiet vs Punchy</title>
+  <meta name="description" content="A polished static demo of CSS custom properties driving density and surface themes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p class="brand-kicker">CSS custom properties</p>
+          <h1 class="brand-title">Density &amp; Surface</h1>
+        </div>
+      </div>
+
+      <div class="controls" role="group" aria-label="Theme controls">
+        <div class="control-block">
+          <span class="control-label" id="density-label">Density</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="density-label">
+            <button type="button" class="segment" data-set-density="quiet" aria-pressed="true">Quiet</button>
+            <button type="button" class="segment" data-set-density="punchy" aria-pressed="false">Punchy</button>
+          </div>
+        </div>
+        <div class="control-block">
+          <span class="control-label" id="surface-label">Surface</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="surface-label">
+            <button type="button" class="segment" data-set-surface="cream" aria-pressed="true">Cream</button>
+            <button type="button" class="segment" data-set-surface="alternate" aria-pressed="false">Alternate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Editorial theme kit</p>
+      <h2 class="headline">Same story. Two densities. Two surfaces.</h2>
+      <p class="lede">
+        Spacing, type scale, radii, and shadow weight are driven by CSS custom properties
+        on <code>&lt;html&gt;</code>. Toggle Quiet vs Punchy and Cream vs Alternate —
+        the layout keeps its grown, ink-on-paper character either way.
+      </p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-primary">Read the essay</button>
+        <button type="button" class="btn btn-ghost">Browse notes</button>
+      </div>
+      <aside class="token-peek" aria-label="Live token values">
+        <p class="token-peek-title">Token peek</p>
+        <dl class="token-grid">
+          <div><dt>--space-md</dt><dd data-token="--space-md"></dd></div>
+          <div><dt>--font-size-h1</dt><dd data-token="--font-size-h1"></dd></div>
+          <div><dt>--radius-md</dt><dd data-token="--radius-md"></dd></div>
+          <div><dt>--shadow-card</dt><dd data-token="--shadow-card" class="token-shadow"></dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="cards-section" aria-labelledby="cards-heading">
+      <div class="section-head">
+        <h3 id="cards-heading">Featured pieces</h3>
+        <p>Cards inherit density tokens for padding, gaps, and type.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <p class="card-meta">Essay · 8 min</p>
+          <h4>Quiet density for long reading</h4>
+          <p>
+            Generous leading and softer corners keep the page calm when the content
+            is meant to be absorbed, not scanned.
+          </p>
+          <a class="text-link" href="#main">Continue reading</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">Note · 3 min</p>
+          <h4>Punchy density for product UI</h4>
+          <p>
+            Tighter spacing and stronger shadow weight make controls feel decisive
+            without tipping into neon gimmicks.
+          </p>
+          <a class="text-link" href="#main">Continue reading</a>
+        </article>
+        <article class="card">
+          <p class="card-meta">Guide · 5 min</p>
+          <h4>Surfaces that still feel paper</h4>
+          <p>
+            Cream and a subtle alternate share the same ink and turquoise accent —
+            only the ground shifts, not the personality.
+          </p>
+          <a class="text-link" href="#main">Continue reading</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-heading">
+      <div class="form-panel">
+        <div class="section-head">
+          <h3 id="form-heading">Subscribe to the field notes</h3>
+          <p>Form controls pick up the same radius, focus, and density tokens.</p>
+        </div>
+        <form class="demo-form" action="#" method="get">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Ada Lovelace" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="ada@example.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="cadence">Cadence</label>
+            <select id="cadence" name="cadence">
+              <option>Weekly digest</option>
+              <option>Monthly roundup</option>
+              <option>Only major essays</option>
+            </select>
+          </div>
+          <div class="field field-check">
+            <label class="check-label">
+              <input type="checkbox" name="announce" checked />
+              <span class="check-ui" aria-hidden="true"></span>
+              <span>Send product announcements</span>
+            </label>
+          </div>
+          <div class="field field-toggle">
+            <label class="toggle-label">
+              <span>Darker ink for captions</span>
+              <input type="checkbox" name="ink" role="switch" />
+              <span class="toggle-ui" aria-hidden="true"></span>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Join the list</button>
+            <button type="reset" class="btn btn-ghost">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Static CSS theme demo · preferences persist in <code>localStorage</code> ·
+      live at <a href="https://frank-dixon.github.io/css-density-demo/">frank-dixon.github.io/css-density-demo</a>
+    </p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
