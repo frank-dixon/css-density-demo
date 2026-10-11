@@ -52,3 +52,13 @@ npx serve .
 ## Deploy notes
 
 Publish this folder as a GitHub Pages project site. Do not force-push; create/push the remote when ready.
+
+## Development
+
+```bash
+npm install
+npm run watch   # Tailwind compile + minify src/input.css -> styles.css, esbuild minify src/js -> root on save
+npm run build   # one-shot production build
+```
+
+Edit `src/`; the minified `styles.css` and JS at the repo root are what GitHub Pages serves.
